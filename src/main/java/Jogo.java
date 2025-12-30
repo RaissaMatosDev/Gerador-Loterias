@@ -48,6 +48,7 @@ public class Jogo {
         System.out.println("\n" + nomeJogo);
         System.out.println("Gerando números...\n");
 
+
         GeradorNumeros gerador = new GeradorNumeros();
         int[] numeros = gerador.gerarNumerosUnicos(quantidade, limite);
 
@@ -55,7 +56,15 @@ public class Jogo {
         for (int n : numeros) {
             System.out.print(n + " ");
         }
+        System.out.println(" - Deseja gerar novamente?[1-SIM/2-NÃO]");
+        int again = scan.nextInt();
 
+        if (again == 1) {
+            escolherJogo();
+        } else {
+            System.out.println("Fechando Aplicação...");
+        }
         scan.close();
     }
 }
+
